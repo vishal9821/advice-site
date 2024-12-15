@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Lobster+Two:ital@1&display=swap" rel="stylesheet">
+    <title>Advise site</title>
+    <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+    <div class="main">
+        <h1 class="heading">Here's a advise for you !</h1>
+        <div class="card">
+            <% if (locals.data){ %>
+                <p class="content show"><%= data.slip.advice %></p>
+            <% }else{ %>
+            <p class="content">Click the button and let wisdom unfold—get your personalized advice now!</p>
+            <% } %>
+            <% if(locals.error){ %>
+                <p class="error"><%= error %></p>
+            <% } %>
+        </div>
+        <div class="button">
+            <form action="/advise">
+            <% if(mark===false){ %>
+                <button formaction="/" class="button">Reset</button>
+            <% }else{ %>
+                <input type="submit",name='btn', value="Generate" class="button">
+            <% } %>
+            </form>
+        </div>
+    </div>
+    <script src="script/main.js"></script>
+</body>
+</html>

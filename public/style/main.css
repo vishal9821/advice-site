@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    background-image:linear-gradient(to right bottom,#7fd567b8,#28b483c9),url("../images/advise_bg.png");
+    display: flex;
+    background-size:cover;
+    background-position: center center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    gap: 70px;
+    perspective: 1500px;
+    overflow: hidden;
+}
+.heading{
+    font-family: 'Bangers',sans-serif;
+    font-size: 35px;
+    letter-spacing: 2.5px;
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right bottom,rgba(229, 71, 13, 0.801),rgba(211, 211, 9, 0.829));
+    animation: 1s infinite alternate dancing;
+}
+
+@keyframes dancing{
+    0%{
+        transform: skewX(-30deg);
+    }
+    100%{
+        transform: skewX(30deg);
+    }
+}
+
+.card{
+    height: 500px;
+    width: 350px;
+    color: #fff;
+    font-size: 30px;
+    text-transform: capitalize;
+    background-image: linear-gradient(to bottom,rgba(229, 71, 13, 0.801),rgba(211, 211, 9, 0.829));
+    border-radius: 8px;
+    box-shadow: 0 5px 40px #000;
+    margin-top: -50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 12s ease-in;
+    transition-delay: 150ms;
+
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+.card-rotate{
+    color: transparent;
+    transform: rotateY(-6480deg);
+}
+
+.button{
+    width: 250px;
+    height: 40px;
+    background-image: linear-gradient(to right,rgba(229, 71, 13, 0.801),rgba(211, 211, 9, 0.829));
+    color: #fff;
+    font-size: 20px;
+    outline: none;
+    border-radius: 20px;
+    border: 0px;
+    box-shadow: 0 5px 40px #000;
+    transition: transform .4s ease;
+    cursor: pointer;
+}
+.button:hover{
+    transform: scale(1.1);
+}
+.button:active{
+    transform: scale(0.998);
+    box-shadow: 0 1px 20px #000;
+}
+.content{
+    font-family: 'Lobster Two', cursive;
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+}
+
+@keyframes show{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: .5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.show{
+    animation:  2s show;
+}
+.error{
+    font-family: 'Lobster Two', cursive;
+    font-size: 50px;
+    color: red;
+    text-align: center;
+}
+
+@media (max-width:480px){
+    .heading{
+        font-size: 30px;
+    }
+    .main{
+        background-image:linear-gradient(to right bottom,#7fd567ec,#28b483e9);
+    }
+
+    .card{
+        height: 400px;
+        width: 250px;
+    }
+
+    .button{
+        width: 200px;
+        height: 35px;
+    }
+    .content{
+        font-size: 30px;
+    }
+}
