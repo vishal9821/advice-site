@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 .main{
     background-image:linear-gradient(to right bottom,#7fd567b8,#28b483c9),url("../images/advise_bg.png");
@@ -10,11 +11,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    height: 95vh;
     gap: 70px;
-    perspective: 1500px;
-    overflow: hidden;
-}
+    perspective: 1500px;}
 .heading{
     font-family: 'Bangers',sans-serif;
     font-size: 35px;
@@ -26,11 +25,11 @@
 }
 
 @keyframes dancing{
-    0%{
+    0%,100%{
         transform: skewX(-30deg);
     }
-    100%{
-        transform: skewX(30deg);
+    50%{
+        transform: skewX(0);
     }
 }
 
@@ -47,7 +46,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 12s ease-in;
+    transition: transform 12s ease-in-out;
     transition-delay: 150ms;
 
 }
@@ -58,7 +57,8 @@
 
 .card-rotate{
     color: transparent;
-    transform: rotateY(-6480deg);
+    transform: rotateY(-6840deg);
+    /* transition: all 13s ease-out; */
 }
 
 .button{
@@ -100,7 +100,8 @@
     }
 }
 .show{
-    animation:  2s show;
+    animation:  5s show;
+    animation-duration: 4s;
 }
 .error{
     font-family: 'Lobster Two', cursive;
@@ -108,7 +109,22 @@
     color: red;
     text-align: center;
 }
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 , 5px;
+    height: 5vh;
+    background-image:linear-gradient(to right bottom,#7fd567ec,#28b483e9) ;
+}
+.footer_head{
+    text-transform: capitalize;
+    font-family:'Bangers',sans-serif;
+    font-size: 20px;
+    letter-spacing: 4px;
+    color: #fff;
 
+}
 @media (max-width:480px){
     .heading{
         font-size: 30px;
@@ -128,5 +144,9 @@
     }
     .content{
         font-size: 30px;
+    }
+    .footer_head{
+        font-size: 14px;
+        letter-spacing: 1px;
     }
 }
