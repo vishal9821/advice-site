@@ -46,7 +46,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 13s ease-in;
+    transition: transform 13.5s ease-in;
     transition-delay: 150ms;
 
 }
